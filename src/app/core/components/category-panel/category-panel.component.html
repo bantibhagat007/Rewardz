@@ -1,0 +1,14 @@
+<aside class="categories-panel">
+    <h3>Categories</h3>
+    <div class="category-list">
+        @for (category of categories; track category.id) {
+        <div class="category-item" [class.selected]="category.selected" (click)="onCategoryClick(category)">
+            <div class="category-content">
+                <mat-icon>{{ category.expanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+                <span class="category-name">{{ category.name }}</span>
+                <mat-icon class="category-check" [class.selected]="category.selected">check</mat-icon>
+            </div>
+        </div>
+        }
+    </div>
+</aside>

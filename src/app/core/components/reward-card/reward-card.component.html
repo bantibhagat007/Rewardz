@@ -1,0 +1,15 @@
+<div class="reward-card">
+    @if (reward.quantity === 0) {
+    <div class="stock-badge">Out of stock</div>
+    } @else if (reward.quantity <= reward.low_quantity) { <span class="stock-badge">ON High Demand (Only {{ reward.quantity }} left)</span>
+        }
+        <img [src]="reward.display_img_url || 'https://rewardz.sg/images/icons/contact-us-hand.png'"
+            [alt]="reward.name">
+        <div class="reward-details">
+            <h3>{{ reward.name }}</h3>
+            <p>{{ reward.points }} Points</p>
+            @if (reward.valid_until) {
+            <p class="validity">Valid Until: {{ reward.valid_until }}</p>
+            }
+        </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="sort-container">
+    <button class="sort-button" (click)="togglePanel()">
+        <span>Sort</span>
+    </button>
+
+    @if (isPanelOpen()) {
+    <div class="sort-panel">
+        <div class="panel-header">
+            <h2>Filter By</h2>
+            <button class="reset-all" (click)="resetAll()">Reset All</button>
+        </div>
+
+        <div class="sort-section">
+            <h3>Sort</h3>
+            <div class="sort-buttons">
+                <button class="sort-btn" [class.active]="currentSort() === 'asc'" (click)="sortBy('asc')">
+                    A to Z
+                </button>
+                <button class="sort-btn" [class.active]="currentSort() === 'desc'" (click)="sortBy('desc')">
+                    Z to A
+                </button>
+            </div>
+        </div>
+
+        <div class="apply-section">
+            <button class="apply-btn" (click)="apply()">Apply</button>
+        </div>
+    </div>
+    }
+</div>

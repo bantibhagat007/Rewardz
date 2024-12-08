@@ -1,0 +1,34 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 2rem;
+
+        .rewards-section {
+
+            .rewards-header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 24px;
+                color: gray;
+                font-weight: 500;
+            }
+
+            .reward-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .main-content {
+          grid-template-columns: 1fr;
+        }
+    }
+}

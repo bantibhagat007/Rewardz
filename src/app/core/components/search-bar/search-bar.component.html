@@ -1,0 +1,25 @@
+<div class="search-section">
+    <h2>Search</h2>
+    <div class="search-bar">
+        <div class="search-input">
+            <mat-icon class="search-icon">search</mat-icon>
+            <input type="text" placeholder="Search" [formControl]="searchControl" />
+        </div>
+    </div>
+
+    @if (activeFilters().length > 0) {
+    <div class="filters">
+        <span class="filter-tag">Applied Filters:</span>
+        @for (filter of activeFilters(); track filter) {
+        <span class="filter-chip">
+            {{ filter }}
+            <button (click)="removeFilter(filter)">x</button>
+        </span>
+        }
+        <span class="filter-chip clear-all" (click)="clearAllFilters()">
+            Clear Filters
+            <button>x</button>
+        </span>
+    </div>
+    }
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <app-search-bar (search)="onSearch($event)" />
+
+    <div class="main-content">
+        <app-category-panel [categories]="categories" (categorySelect)="onCategorySelect($event)" />
+
+        <div class="rewards-section">
+            <div class="rewards-header">
+                <span>{{rewards().length}} results found</span>
+                <app-sort-panel (sortChange)="onSort($event)" />
+            </div>
+
+            <div class="reward-grid">
+                @for (reward of rewards(); track reward.pk) {
+                <app-reward-card [reward]="reward" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
